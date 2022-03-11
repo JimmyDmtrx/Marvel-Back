@@ -67,7 +67,7 @@ router.post("/login", async (req, res) => {
     if (userToLog === null) {
       res.status(400).json({
         error: {
-          message: "Vos identifiants ne sont pas bons.1",
+          message: "Can't find your informations",
         },
       });
     } else if (
@@ -77,7 +77,7 @@ router.post("/login", async (req, res) => {
     ) {
       res.status(400).json({
         error: {
-          message: "Vos identifiants ne sont pas bons.2",
+          message: "Vos identifiants ne sont pas bons",
         },
       });
     } else if (
