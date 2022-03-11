@@ -34,12 +34,13 @@ router.post("/signup", async (req, res) => {
     } else {
       const newToken = uid2(16);
       const hash = SHA256(req.fields.password + salt).toString(encBased64);
-      const newTab = [];
+      const tabComics = [];
+      const tabCharacters = [];
       const newUser = new User({
         username: req.fields.username,
         email: req.fields.email,
-        favCharacters: newTab,
-        favComics: newTab,
+        favCharacters: tabCharacters,
+        favComics: tabComics,
         token: newToken,
         hash: hash,
         salt: salt,
