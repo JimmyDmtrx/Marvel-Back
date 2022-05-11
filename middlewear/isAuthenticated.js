@@ -5,7 +5,7 @@ const isAuthenticated = async (req, res, next) => {
     if (req.headers.authorization) {
       const token = req.headers.authorization.replace("Bearer ", "");
       const user = await User.finfOne({ token: token }).select(
-        "_id email username favcomics favcharacters token"
+        "_id email username favComics favCharacters token"
       );
       if (user) {
         req.user = user;
